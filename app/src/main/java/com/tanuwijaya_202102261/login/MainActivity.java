@@ -1,6 +1,8 @@
 package com.tanuwijaya_202102261.login;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -9,18 +11,26 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.AsyncHttpResponseHandler;
+
+import java.util.List;
 
 import cz.msebera.android.httpclient.Header;
 
 public class MainActivity extends AppCompatActivity {
 
     private Button _loginButton;
+
+
     private EditText _idEditText;
     private EditText _passwordEditText;
-    private Intent _menuIntent;
     private String _id, _password, _url;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,6 +38,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         _loginButton = findViewById(R.id.loginButton);
+
 
         _loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -54,7 +65,7 @@ public class MainActivity extends AppCompatActivity {
 
                         Toast.makeText(getApplicationContext(), "Selamat datang, " + _id, Toast.LENGTH_LONG).show();
 
-                        _menuIntent = new Intent(getApplicationContext(), MenuActivity.class);
+                        Intent _menuIntent = new Intent(getApplicationContext(), MenuActivity.class);
                         startActivity(_menuIntent); //munculkan halaman "Menu"
                     }
 
@@ -65,5 +76,11 @@ public class MainActivity extends AppCompatActivity {
                 });
             }
         });
+
     }
+
+
+
+
+
 }

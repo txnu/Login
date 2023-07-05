@@ -42,4 +42,5 @@
         android:layout_height="wrap_content"
         android:text="Login"
         android:id="@+id/loginButton"/>
+
 </LinearLayout>
