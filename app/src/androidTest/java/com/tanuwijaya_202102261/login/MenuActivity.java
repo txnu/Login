@@ -8,7 +8,6 @@ import android.os.Bundle;
 import android.view.View;
 
 import android.widget.Button;
-import android.widget.EditText;
 
 
 public class MenuActivity extends AppCompatActivity {
@@ -21,18 +20,12 @@ public class MenuActivity extends AppCompatActivity {
 
     private Button _CuacaButton;
 
-    private EditText _idEditText;
-
-    private String _id;
-
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu);
-
-        _id = _idEditText.getText().toString();
 
         _masterMahasiswaButton = findViewById(R.id.masterMahasiswaButton);
         _forexButton = findViewById(R.id.forexButton);
